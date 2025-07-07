@@ -44,6 +44,11 @@ function addTodo() {
     removeTodoBtn.innerHTML = "حذف";
     removeTodoBtn.className = "delete";
 
+    removeTodoBtn.addEventListener("click", function(event) {
+        const mainTodoParent = event.target.parentElement.parentElement;
+        mainTodoParent.remove();
+    })
+
     todoButtonsDiv.append(removeTodoBtn);
     todoDataDiv.append(todoTitleElem);
     articlesElem.append(todoDataDiv);
